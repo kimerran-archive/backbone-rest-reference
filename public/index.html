@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>backbone-rest-sample</title>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/underscore-min.js"></script>
+	<script type="text/javascript" src="js/backbone-min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	var BookModel = Backbone.Model.extend({
+		urlRoot: 'api/books'		
+	});
+	var BookCollection = Backbone.Collection.extend({
+		model: BookModel,
+		url: 'api/books'
+	});
+
+	var book = new BookModel({
+		title: 'Princess Sarah',
+		year: 1889
+	});
+	book.save();
+</script>
+
+
+
+</body>
+</html>
